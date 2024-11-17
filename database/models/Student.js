@@ -15,7 +15,38 @@ const Student = db.define("student", {
   lastname: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+
+  // Adding new fields to make student info more robust in my form
+  age: {
+    type: Sequelize.INTEGER,  // Store age as an integer
+    allowNull: false
+  },
+
+  yearInSchool: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+
+  email: {
+    type: Sequelize.STRING,  
+    allowNull: false,
+    unique: true,  //i need to force user to enter unique email
+    validate: {
+      isEmail: true //i think this validates the field?
+    }
+  },
+
+  address: {
+    type: Sequelize.STRING, 
+    allowNull: true
+  },
+
+  campusId: {
+    type: Sequelize.INTEGER,
+    allowNull: false
   }
+  
 });
 
 // Export the student model

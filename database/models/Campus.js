@@ -25,3 +25,4 @@ const Campus = db.define("campus", {
 
 // Export the campus model
 module.exports = Campus;
+ 
