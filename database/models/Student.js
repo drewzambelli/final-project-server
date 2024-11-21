@@ -57,3 +57,4 @@ const Student = db.define("student", {
 
 // Export the student model
 module.exports = Student;
+ 

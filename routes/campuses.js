@@ -26,7 +26,7 @@ const ash = require('express-async-handler');
 
 /* GET ALL CAMPUSES */
 router.get('/', ash(async(req, res) => {
-  console.log("testing testing testing");
+  
   let campuses = await Campus.findAll({
     include: [Student],
     order: [['name', 'ASC']] //display the schools in alphabetical order - not by ID

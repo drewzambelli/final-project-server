@@ -19,10 +19,11 @@ const syncDatabase = async () => {
     // Model Synchronization:
     // - Make a connection between the Node.js application (this server app) and the Postgres database application.
     // - Create new tables (according to the models) in the Postgres database application, dropping tables first if they already existed
-    await db.sync({force: true});  // Drop table if already exists (force: true)
+    await db.sync({alter: true})//this should allow data to persist in DB--->original code: //({force: true});  // Drop table if already exists (force: true)
     console.log('------Synced to db--------')
     // Database Seeding
-      await seedDB(); 
+    //  await seedDB(); <-------------------------DREW, YOU TURNED OFF SEED DATA ON 11/21/24
+
     console.log('--------Successfully seeded db--------');
   } 
   catch (err) {
