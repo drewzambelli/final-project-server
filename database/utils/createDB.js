@@ -37,3 +37,4 @@ const createDB = async () => {
 
 // Export the database creation function
 module.exports = createDB;
+ 
