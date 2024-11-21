@@ -19,14 +19,10 @@ const syncDatabase = async () => {
     // Model Synchronization:
     // - Make a connection between the Node.js application (this server app) and the Postgres database application.
     // - Create new tables (according to the models) in the Postgres database application, dropping tables first if they already existed
-    await db.sync(); //({force: true});  // Drop table if already exists (force: true)
+    await db.sync({force: true});  // Drop table if already exists (force: true)
     console.log('------Synced to db--------')
     // Database Seeding
-    const devLogical = true; //developer logical for me so i can turn seedDB on/off without deleting
-    if (!devLogical) {
-      console.log("Shouldn't be here if we aren't developing")
       await seedDB(); 
-    } 
     console.log('--------Successfully seeded db--------');
   } 
   catch (err) {

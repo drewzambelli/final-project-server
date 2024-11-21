@@ -67,5 +67,17 @@ router.put('/:id', ash(async(req, res) => {
   res.status(201).json(student);  // Status code 201 Created - successful creation of a resource
 }));
 
+/*CHECK IF EMAIL EXISTS*/
+router.get('/email/:email', ash(async (req, res) => {
+  const email = req.params.email;
+  const student = await Student.findOne({ where: { email } });
+
+  if (student) {
+    return res.status(200).json({ exists: true });
+  } else {
+    return res.status(200).json({ exists: false });
+  }
+}));
+
 // Export router, so that it can be imported to construct the apiRouter (app.js)
 module.exports = router;
