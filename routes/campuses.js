@@ -71,5 +71,13 @@ router.put('/:id', ash(async(req, res) => {
   res.status(201).json(campus);  // Status code 201 Created - successful creation of a resource
 }))
 
+router.get('/exists/:name', ash(async (req, res) => {
+  console.log("in router");
+  const campusName = req.params.name;
+  console.log("in router, campusName:", campusName)
+  const campus = await Campus.findOne({ where: { name: campusName } });
+  res.status(200).json(!!campus); // Return true if campus exists, false otherwise
+}));
+
 // Export router, so that it can be imported to construct the apiRouter (app.js)
 module.exports = router;
