@@ -42,10 +42,16 @@ const Student = db.define("student", {
     allowNull: true
   },
 
+  gpa: {
+    type: Sequelize.DECIMAL(3, 2),  // GPA with two decimal places
+    allowNull: false,
+  },
+
   campusId: {
     type: Sequelize.INTEGER,
     allowNull: false
-  }
+  },
+
   
 });
 
