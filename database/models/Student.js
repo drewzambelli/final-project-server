@@ -52,7 +52,11 @@ const Student = db.define("student", {
     allowNull: false
   },
 
-  
+  profilePhoto: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
+
 });
 
 // Export the student model
