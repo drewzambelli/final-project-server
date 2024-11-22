@@ -21,7 +21,12 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
-  }
+  },
+
+  campusPhoto: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
 });
 
 // Export the campus model
