@@ -5,6 +5,6 @@ This repository is the server (back-end) starter code for Final Project - Full-S
 Team Members:
 Drew Zambelli  - github: https://github.com/drewzambelli
 
-Server side repo: https://github.com/drewzambelli/final-project-client
+Server side repo: https://github.com/drewzambelli/final-project-server
 
-client side repo: https://github.com/drewzambelli/final-project-server 
+client side repo: https://github.com/drewzambelli/final-project-client
